@@ -2,12 +2,11 @@ FROM node
 
 WORKDIR ./app
 
-#也可以寫成下面這樣，前面的.是本機的整個資料夾，後面的./是指向設定的workdir
-#COPY . ./
-
-COPY . /app
+COPY package.json /app
 
 RUN npm install
+
+COPY . /app
 
 EXPOSE 80
 
